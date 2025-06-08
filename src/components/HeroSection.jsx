@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import image from "../assets/one.jpg";
+import image from "../../public/one.jpg";
 
 export const HeroSection = () => {
   return (
