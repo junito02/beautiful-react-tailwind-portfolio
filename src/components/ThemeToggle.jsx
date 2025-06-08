@@ -4,19 +4,47 @@ import { cn } from "@/lib/utils";
 
 export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640); // 640px is the 'sm' breakpoint in Tailwind
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-      setIsDarkMode(true);
+
+    if (isMobile) {
+      // Force dark mode on mobile
       document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
     } else {
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
+      // Normal theme behavior for desktop
+      if (storedTheme === "dark") {
+        setIsDarkMode(true);
+        document.documentElement.classList.add("dark");
+      } else {
+        localStorage.setItem("theme", "light");
+        setIsDarkMode(false);
+        document.documentElement.classList.remove("dark");
+      }
     }
-  }, []);
+  }, [isMobile]);
 
   const toggleTheme = () => {
+    if (isMobile) return; // Prevent theme toggle on mobile
+
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -32,8 +60,9 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outlin-hidden hover:bg-primary/10 cursor-pointer"
+        "fixed top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
+        "focus:outline-none hover:bg-primary/10 cursor-pointer",
+        isMobile ? "hidden" : "block" // Hide button on mobile
       )}
     >
       {isDarkMode ? (
