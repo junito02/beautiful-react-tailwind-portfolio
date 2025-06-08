@@ -7,6 +7,7 @@ import {
   Send,
   Twitch,
   Twitter,
+  Github,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -59,7 +60,7 @@ export const ContactSection = () => {
                     href="mailto:hello@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    Junioralejandrotiburcio@gmail.com
                   </a>
                 </div>
               </div>
@@ -84,7 +85,7 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
+                    Dominican Republic ("DR")
                   </a>
                 </div>
               </div>
@@ -93,7 +94,10 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/junior-alejandro-836684344/"
+                  target="_blank"
+                >
                   <Linkedin />
                 </a>
                 <a href="#" target="_blank">
@@ -105,17 +109,20 @@ export const ContactSection = () => {
                 <a href="#" target="_blank">
                   <Twitch />
                 </a>
+                <a href="https://github.com/junito02/junito02" target="_blank">
+                  <Github />
+                </a>
               </div>
             </div>
           </div>
 
           <div
-            className="bg-card p-8 rounded-lg shadow-xs"
+            className="bg-card p-8 rounded-lg shadow-xs border"
             onSubmit={handleSubmit}
           >
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6 ">
               <div>
                 <label
                   htmlFor="name"
@@ -129,8 +136,8 @@ export const ContactSection = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary text-center"
+                  placeholder="Example Name..."
                 />
               </div>
 
@@ -147,8 +154,8 @@ export const ContactSection = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="john@gmail.com"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary text-center"
+                  placeholder="exampleemail.com"
                 />
               </div>
 
@@ -164,7 +171,7 @@ export const ContactSection = () => {
                   id="message"
                   name="message"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none text-center"
                   placeholder="Hello, I'd like to talk about..."
                 />
               </div>
@@ -173,7 +180,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
+                  "cosmic-button w-full flex items-center justify-center gap-2 cursor-pointer"
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

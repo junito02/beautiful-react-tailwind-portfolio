@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { Book, Code, Database } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -12,13 +12,13 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              A devoted learner who loves what he does.
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              With 2 years of experience in web development, I specialize in
+              creating responsive, accessible, and performant web applications
+              using modern technologies.
             </p>
 
             <p className="text-muted-foreground">
@@ -61,13 +61,13 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
+                  <Database className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">User Experience</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    Designing intuitive and user-friendly interfaces for web
+                    applications and Databases.
                   </p>
                 </div>
               </div>
@@ -75,14 +75,14 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
+                  <Book className="h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">Learning</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
+                    Continuous learning and growth in the ever-evolving tech
+                    landscape.
                   </p>
                 </div>
               </div>

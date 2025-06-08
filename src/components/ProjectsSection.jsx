@@ -3,21 +3,22 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
+    title: "Movie App",
+    description:
+      " A responsive movie app built with React, TailwindCSS, and TMDB API.",
+    image: "/projects/project01.png",
     tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
+    demoUrl: "https://movies-app-pink-five.vercel.app/",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "App news",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
+      " A responsive app news built with React, TailwindCSS, news API.",
+    image: "/projects/project02.png",
+    tags: ["React", "TailwindCSS", "news API"],
+    demoUrl: "https://app-news-one.vercel.app/",
     githubUrl: "#",
   },
   {
@@ -25,9 +26,9 @@ const projects = [
     title: "E-commerce Platform",
     description:
       "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
+    image: "/projects/project03.png",
+    tags: ["React", "TailwindCSS", "Supabase"],
+    demoUrl: "https://ecommerce01-gules.vercel.app/",
     githubUrl: "#",
   },
 ];
@@ -100,7 +101,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/junito02/junito02"
           >
             Check My Github <ArrowRight size={16} />
           </a>
