@@ -56,7 +56,7 @@ export const Navbar = () => {
 
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
+          className="md:hidden p-2 text-foreground z-50 cursor-pointer"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
@@ -71,12 +71,12 @@ export const Navbar = () => {
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
+          <div className="flex flex-col space-y-8 text-xl ">
             {navItems.map((item, key) => (
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className="text-foreground/80 hover:text-primary transition-colors duration-300 "
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
